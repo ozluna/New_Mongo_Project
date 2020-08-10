@@ -33,6 +33,7 @@ def insert_task():
 def edit_task(task_id):
     the_task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
     all_categories = mongo.db.categories.find()
+    print(f"The task is this: {the_task}")
     return render_template('edittask.html', task=the_task, categories=all_categories)
 
 

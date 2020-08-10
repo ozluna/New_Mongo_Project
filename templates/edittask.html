@@ -41,7 +41,7 @@
         <div class="row">
             <div class="input-field col s12" id="matfix" >
                 <i class="material-icons prefix">today</i>
-                <input id="due_date" name="due_date" type="text" class="datepicker">
+                <input id="due_date" name="due_date" type="text" class="datepicker"> 
                 <label for="icon_prefix">Due Date</label>
             </div>
         </div>
@@ -76,7 +76,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
         due_date = Date.parse('{{task.due_date}}');
-        $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy' }).trigger('change');
+        $('#due_date').datepicker("setDate", due_date).trigger();
     });
     
     </script>
